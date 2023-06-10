@@ -3,16 +3,17 @@ import { Project } from './Projects';
 
 interface ProjectProps {
    project: Project;
+   onEdit: (project: Project) => void
 }
 
 function formatDescription(description: string): string {
    return description.substring(0, 60) + '...';
 }
 
-function ProjectCard({ project }: ProjectProps) {
+function ProjectCard({ project, onEdit }: ProjectProps) {
 
    const handleEditClick = (projectBeingEdited: Project) => {
-      console.log(projectBeingEdited);
+      onEdit(projectBeingEdited);
    }
 
    return (
